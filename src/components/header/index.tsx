@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { useSelector } from 'react-redux';
 import Logo from '../../assets/640px-MarvelLogo.png';
@@ -12,6 +12,13 @@ const Header: React.FC = () => {
   const comics = useSelector<IState, Comics[]>(
     state => state.comic.comicsSelecteds,
   );
+
+  useEffect(() => {
+    if (comics.length > 0) {
+      setOpen(true);
+    }
+  }, [comics]);
+
   return (
     <>
       <Container>

@@ -6,12 +6,9 @@ import storage from 'redux-persist/lib/storage';
 import { IComicState } from './comic/reducer/types';
 import reducers from './rootReducer';
 import sagas from './rootSaga';
-
-import { IAuthState } from './auth/reducer/types';
 import { IModalState } from './modal/reducer/types';
 
 export interface IState {
-  auth: IAuthState;
   comic: IComicState;
   modal: IModalState;
 }
