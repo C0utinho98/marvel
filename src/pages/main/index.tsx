@@ -14,13 +14,14 @@ const Main: React.FC = () => {
   const [size, setSize] = useState(0);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-
   useEffect(() => {
     setLoading(true);
     const getComics = async () => {
       await api
         .get(
-          `comics?ts=1611941633&apikey=4869b727d93758781625a424b37aab46&hash=029f7d986894f2d0f70c573085c0487a&offset=${page}`,
+          `comics?ts=${process.env.REACT_APP_TS}&apikey=${
+            process.env.REACT_APP_API_KEY
+          }&hash=${process.env.REACT_APP_HASH}&offset=${page * 20}`,
         )
         .then(response => {
           setData(response.data.data.results as Comics[]);
