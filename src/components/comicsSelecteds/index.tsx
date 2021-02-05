@@ -69,6 +69,7 @@ const ComicsSelecteds: React.FC<ComicsProps> = ({ open, close }) => {
                     color="#fff"
                     size={30}
                     onClick={() => remove(el.id)}
+                    data-testid="remove"
                   />
                 </div>
                 <img

@@ -23,7 +23,7 @@ const Card: React.FC<CardProp> = ({ data }) => {
   }, [data, dispatch]);
 
   return (
-    <Container onClick={selectedComict}>
+    <Container onClick={selectedComict} data-testid="select">
       <img
         src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
         alt={data.title}

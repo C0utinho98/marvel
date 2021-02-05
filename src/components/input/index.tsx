@@ -11,7 +11,7 @@ const Input: React.FC<InputProps> = ({ icon: Icon, ...rest }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} data-testid="input-test">
       {Icon && <Icon size={20} />}
       <input
         onFocus={() => setIsFocused(true)}

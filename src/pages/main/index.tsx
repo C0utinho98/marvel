@@ -25,7 +25,7 @@ const Main: React.FC = () => {
         .then(response => {
           setData(response.data.data.results as Comics[]);
           setAuxData(response.data.data.results as Comics[]);
-          setSize(response.data.data.total / 10);
+          setSize(Math.ceil(response.data.data.total / 10));
           setLoading(false);
         });
     };

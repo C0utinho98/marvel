@@ -13,14 +13,17 @@ const Modal: React.FC = () => {
   const open = useSelector<IState, boolean>(state => state.modal.open);
   const comic = useSelector<IState, IComicState>(state => state.comic);
   const { comicSelected, comicsSelecteds } = comic;
-
   return (
     <>
       {open && (
         <Container>
           <Content>
             <Icon>
-              <GrClose size={20} onClick={() => dispatch(toggleModal())} />
+              <GrClose
+                size={20}
+                onClick={() => dispatch(toggleModal())}
+                data-testid="close"
+              />
             </Icon>
             {comicSelected && (
               <WrapperComic>

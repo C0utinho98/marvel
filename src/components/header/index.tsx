@@ -29,7 +29,11 @@ const Header: React.FC = () => {
       <ComicsSelecteds open={open} close={boll => setOpen(boll)} />
       <CircleIcon>
         {comics.length > 0 && (
-          <Arrow onClick={() => setOpen(prevState => !prevState)} open={open}>
+          <Arrow
+            onClick={() => setOpen(prevState => !prevState)}
+            open={open}
+            data-testid="open"
+          >
             <IoIosArrowDown size={30} />
           </Arrow>
         )}

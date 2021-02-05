@@ -13,13 +13,21 @@ const Pagination: React.FC<PaginationProps> = ({ size, page, changePage }) => {
     <Container>
       <Icon style={{ flexDirection: 'row-reverse' }}>
         {page > 1 && (
-          <IoIosArrowBack size={30} onClick={() => changePage(page - 1)} />
+          <IoIosArrowBack
+            size={30}
+            onClick={() => changePage(page - 1)}
+            data-testid="back"
+          />
         )}
       </Icon>
       <span>{page}</span>
       <Icon>
         {page < size && (
-          <IoIosArrowForward size={30} onClick={() => changePage(page + 1)} />
+          <IoIosArrowForward
+            size={30}
+            onClick={() => changePage(page + 1)}
+            data-testid="next"
+          />
         )}
       </Icon>
     </Container>
