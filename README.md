@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+## `yarn`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Instala as dependências da aplicação.
 
-## Available Scripts
+## `Variáveis de ambiente`
 
-In the project directory, you can run:
+No arquivo `.env.example` adicione as credenciais conforme a documentação [Marvel Developer](https://developer.marvel.com/documentation/authorization).
 
-### `yarn start`
+Após retire a extenção `.example` do arquivo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `yarn start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Executar a aplicação em desenvolvimento.
 
-### `yarn test`
+Abra no seu navegador [http://localhost:3000](http://localhost:3000).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `yarn test`
 
-### `yarn build`
+Executa os testes unitários da aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `yarn test --coverage --watchAll false`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Executa os testes unitários da aplicação e gera o arquivo de cobertura de teste.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para visualizar acesse a pasta: `coverage/lcov-report/index.html`
 
-### `yarn eject`
+## `Redux DevTools`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A aplicação utiliza a ferramenta Redux DevTools para monitorar os estados da aplicação.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Acesse [DevTools](https://github.com/reduxjs/redux-devtools) para mais informações.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## `GitHub Pages`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A aplicação estará disponível no GitHub Pages no seguinte endereço: https://coutinho57.github.io/marvel/
 
-## Learn More
+## `Sobre a aplicação`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Será possível visualizar e também selecionar vários quadrinhos para fazer o envio por email
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div style="display: flex; flex-direction: column">
+<img style="margin:25px 10px" src="https://user-images.githubusercontent.com/49007338/107080453-0df5c080-67d0-11eb-960b-1082c32e8473.png"/>
+
+<img style="margin:25px 10px" src="https://user-images.githubusercontent.com/49007338/107081571-ae001980-67d1-11eb-9a36-cc72f554bb32.png"/>
+
+<span>Após selecionar vai abrir no cabeçalho os quadrinhos selecionados</span>
+
+<img style="margin:25px 10px" src="https://user-images.githubusercontent.com/49007338/107082552-1c91a700-67d3-11eb-9bd4-e78c2b6056ee.png"/>
+
+<span>No campo `Type your email` insira o email que deseja fazer o envio e após aperte o botão `send`</span>
+
+<img style="margin:25px 10px" src="https://user-images.githubusercontent.com/49007338/107082820-80b46b00-67d3-11eb-9bc7-acad0c0681d9.png"/>
+
+<span>Após montará a estrutura para enviar por email</span>
+
+<img style="margin:25px 10px" src="https://user-images.githubusercontent.com/49007338/107082986-b9544480-67d3-11eb-9a7e-e434d28383a7.png"/>
+
+<div>
