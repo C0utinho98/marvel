@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/marvel/static/js/main.dd03bc9b.chunk.js",
-    "main.js.map": "/marvel/static/js/main.dd03bc9b.chunk.js.map",
+    "main.js": "/marvel/static/js/main.d6591fd0.chunk.js",
+    "main.js.map": "/marvel/static/js/main.d6591fd0.chunk.js.map",
     "runtime-main.js": "/marvel/static/js/runtime-main.154834f1.js",
     "runtime-main.js.map": "/marvel/static/js/runtime-main.154834f1.js.map",
-    "static/js/2.9c659e4e.chunk.js": "/marvel/static/js/2.9c659e4e.chunk.js",
-    "static/js/2.9c659e4e.chunk.js.map": "/marvel/static/js/2.9c659e4e.chunk.js.map",
+    "static/js/2.d5b63d79.chunk.js": "/marvel/static/js/2.d5b63d79.chunk.js",
+    "static/js/2.d5b63d79.chunk.js.map": "/marvel/static/js/2.d5b63d79.chunk.js.map",
     "index.html": "/marvel/index.html",
-    "static/js/2.9c659e4e.chunk.js.LICENSE.txt": "/marvel/static/js/2.9c659e4e.chunk.js.LICENSE.txt"
+    "static/js/2.d5b63d79.chunk.js.LICENSE.txt": "/marvel/static/js/2.d5b63d79.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.154834f1.js",
-    "static/js/2.9c659e4e.chunk.js",
-    "static/js/main.dd03bc9b.chunk.js"
+    "static/js/2.d5b63d79.chunk.js",
+    "static/js/main.d6591fd0.chunk.js"
   ]
 }
