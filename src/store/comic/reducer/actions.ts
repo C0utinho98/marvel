@@ -10,6 +10,10 @@ interface responseRemove {
   payload: string;
 }
 
+interface responseClear {
+  type: string;
+}
+
 export function selectComic(data: Comics): response {
   return {
     type: 'COMIC_SELECTED',
@@ -28,5 +32,11 @@ export function removeComic(id: string): responseRemove {
   return {
     type: 'REMOVE_COMIC',
     payload: id,
+  };
+}
+
+export function clearState(): responseClear {
+  return {
+    type: 'CLEAR_STATE',
   };
 }

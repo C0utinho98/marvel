@@ -36,6 +36,12 @@ const comic: Reducer<IComicState> = (state = INITIAL_STATE, action) => {
         comicsSelecteds: filter,
       };
     }
+    case 'CLEAR_STATE': {
+      return {
+        ...state,
+        comicsSelecteds: [],
+      };
+    }
     default: {
       return state;
     }

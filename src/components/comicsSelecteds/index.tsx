@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
+import emailjs from 'emailjs-com';
 import {
   Card,
   WrapperCards,
@@ -13,7 +15,7 @@ import {
 } from './styles';
 import { IState } from '../../store';
 import { Comics } from '../../store/comic/reducer/types';
-import { removeComic } from '../../store/comic/reducer/actions';
+import { removeComic, clearState } from '../../store/comic/reducer/actions';
 import Button from '../button';
 import Input from '../input';
 
@@ -43,15 +45,37 @@ const ComicsSelecteds: React.FC<ComicsProps> = ({ open, close }) => {
   );
 
   const send = useCallback(() => {
-    const body = comics.map(
-      el =>
-        `\n Title: ${el.title} \n Image: ${el.thumbnail.path}.${el.thumbnail.extension} \n Description: ${el.description} \n`,
-    );
-    window.open(
-      `mailto:${email}?subject=Comics&body=${body.map(el =>
-        encodeURIComponent(el),
-      )}`,
-    );
+    emailjs
+      .send(
+        'default_service',
+        `${process.env.REACT_APP_TEMPLATE_EMAIL}`,
+        {
+          message: comicsSelecteds.map(
+            el => `
+            <p>
+              Title:
+              ${el.title}
+            </p>
+            <img
+              src="${el.thumbnail.path}.${el.thumbnail.extension}"
+              alt="${el.title}"
+            />
+            <p>
+              Description:
+              ${el.description}
+            </p>
+          `,
+          ),
+          to_email: email,
+        },
+        `${process.env.REACT_APP_USER_EMAIL}`,
+      )
+      .then(() => {
+        toast.success('Email successfully sent!');
+        setEmail('');
+        dispatch(clearState());
+      })
+      .catch(() => toast.error('Error sending email!'));
   }, [comics, email]);
 
   return (
@@ -90,6 +114,7 @@ const ComicsSelecteds: React.FC<ComicsProps> = ({ open, close }) => {
           placeholder="Type your email"
           onChange={e => setEmail(e.target.value)}
           icon={AiOutlineMail}
+          value={email}
         />
         <Button type="button" onClick={send} disabled={email.length === 0}>
           Send

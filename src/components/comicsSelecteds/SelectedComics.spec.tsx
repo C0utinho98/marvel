@@ -28,6 +28,7 @@ describe('SelectedComics component', () => {
   });
   it('Send email', () => {
     const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
+
     useSelectorMock.mockReturnValue(comicsSelecteds);
     let closed;
 
